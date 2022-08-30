@@ -36,3 +36,18 @@ body {
     border: 5px;
     padding: 10px;
 }
+
+.search {
+    background-color: lightslategray;
+    color: white;
+    margin: auto;
+    width: 60%;
+    margin-top: 10px;
+    border: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+#search-input {
+    width: 40%;
+}
