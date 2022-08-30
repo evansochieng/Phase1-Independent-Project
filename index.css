@@ -1,3 +1,13 @@
+body {
+    background-color: #dceaea;
+    margin: 2px 20px 2px 20px;
+}
+
+.heading{
+    background-color: #4682B4;
+    height: 60px;
+}
+
 #campus-icon {
     height: 50px;
     width: 50px;
@@ -6,5 +16,9 @@
 
 #students-image {
     height: 200px;
-    width: 800px;
+    width: 1008px;
+}
+
+.content{
+    padding: 10px;
 }
