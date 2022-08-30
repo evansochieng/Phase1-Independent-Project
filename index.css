@@ -1,6 +1,6 @@
 body {
     background-color: #dceaea;
-    margin: 2px 20px 2px 20px;
+    margin: 20px;
 }
 
 .heading{
@@ -16,9 +16,23 @@ body {
 
 #students-image {
     height: 200px;
-    width: 1008px;
+    width: 1144px;
 }
 
 .content{
+    padding: 10px;
+}
+
+#grad-image {
+    height: 200px;
+    width: 1144px;
+}
+
+#quote {
+    background-color: #333333;
+    color: white;
+    margin: auto;
+    width: 60%;
+    border: 5px;
     padding: 10px;
 }
