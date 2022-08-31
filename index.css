@@ -75,3 +75,23 @@ body {
     margin: auto;
     border: 5px;
 }
+
+#user-info {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 5px;
+    padding: 10px;
+    margin: auto;
+    border: 5px;
+}
+
+#subscribe {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+}
