@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // Call search input
-    searchUniversity()
+    searchUniversity();
 })
 
 
@@ -13,7 +13,35 @@ function fetchData(searchInput){
     fetch(`http://universities.hipolabs.com/search?name=${searchInput}`)
     .then( (response) => response.json())
     .then( (result) => {
-        console.log(result)
+        // The returned data is an array
+        // Loop over each item and extract name, country and url
+        // Show the user these details under the search results section
+
+        // Display these to the search results section
+        const searchResults = document.getElementById("search-details");
+        searchResults.innerHTML = ''; //clear current content
+        
+        for (let university of result){
+            // Add the details to DOM
+            const uniName = university.name;
+            const nameParagraph = document.createElement('p')
+            nameParagraph.textContent = `Name: ${uniName}`
+            searchResults.appendChild(nameParagraph);
+
+            const uniCountry = university.country;
+            const countryParagraph = document.createElement('p')
+            countryParagraph.textContent = `Country: ${uniCountry}`
+            searchResults.appendChild(countryParagraph);
+
+            const uniWebsite = university['web_pages'][0];
+            const websiteParagraph = document.createElement('p')
+            //const webLink = document.createElement('a');
+            //webLink.innerText = uniWebsite
+            //websiteParagraph.appendChild(webLink)
+            //websiteParagraph.innerText = `University website: ` + websiteParagraph.innerText
+            websiteParagraph.innerHTML = `University website: ${uniWebsite}`
+            searchResults.appendChild(websiteParagraph);
+        }
     })
 }
 
@@ -29,7 +57,7 @@ function searchUniversity(){
         event.target.reset();
 
         // Fetch university data
-        fetchData(search)
+        fetchData(search);
         // fetch(`http://universities.hipolabs.com/search?name=${search}`)
         // .then( (response) => response.json())
         // .then( (result) => {
