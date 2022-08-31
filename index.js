@@ -44,10 +44,10 @@ function fetchData(searchInput){
                 webLink.href = uniWebsite;
                 searchResults.appendChild(webLink);
                 
-                // // Add an event listener to the link
-                // websiteParagraph.addEventListener('click', () => {
-                //     window.location.href = uniWebsite; //make it open 
-                // })
+                // Add an event listener to the link
+                webLink.addEventListener('mouseover', () => {
+                    alert('Visit the university website for more information!')
+                })
             }
         }
     })
