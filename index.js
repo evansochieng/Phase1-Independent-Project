@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // POST user info to the server
     postUserInfo();
+
+    // Change button colors
+    colorButtons();
 })
 
 
@@ -131,6 +134,16 @@ function postUserInfo(){
             alert(`${result.userName}, your data has been saved successfully!`)
         })
 
-        event.target.reset() //Reset form
+        event.target.reset(); //Reset form
     })
 } 
+
+// Change the color of buttons on mousedown
+function colorButtons(){
+    const buttons = document.getElementsByTagName('button');
+    for (let button of buttons){
+        button.addEventListener('', () => {
+            button.style.color = 'green';
+        })
+    }
+}

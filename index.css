@@ -15,7 +15,7 @@ body {
 }
 
 #students-image {
-    height: 200px;
+    height: 300px;
     width: 1144px;
 }
 
@@ -24,7 +24,7 @@ body {
 }
 
 #grad-image {
-    height: 200px;
+    height: 300px;
     width: 1144px;
 }
 
@@ -95,4 +95,24 @@ body {
     text-align: center;
     margin: auto;
     padding: 10px;
+}
+
+button {
+    background-color:#0a0a23;
+    color: #fff;
+    min-height: 30px;
+}
+
+input {
+    min-height: 30px;
+}
+
+#user-name {
+    width: 20%;
+    display:inline-block;
+}
+
+#user-email {
+    width: 20%;
+    display:inline-block;
 }
