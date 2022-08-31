@@ -1,7 +1,7 @@
 // INTERACT WITH THE DOM
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Call search input
+    // Call search university function
     searchUniversity();
 })
 
@@ -47,6 +47,7 @@ function fetchData(searchInput){
             }
         }
     })
+    //.then( () => postComments())
     .catch( (error) => {
         alert(error.message);
     })
@@ -63,12 +64,32 @@ function searchUniversity(){
         const search = event.target['search-input'].value;
         event.target.reset();
 
-        // Fetch university data
+        // Call fetchData() to fetch university data
         fetchData(search);
-        // fetch(`http://universities.hipolabs.com/search?name=${search}`)
-        // .then( (response) => response.json())
-        // .then( (result) => {
-        //     console.log(result)
-        // })
+        // Post comments about the university
+        postComments();
+    })
+}
+
+// Handle comments
+function postComments(){
+    // Grab comments form
+    const form = document.getElementById("comments-form");
+
+    // Grab comments section
+    const comments = document.getElementById("comments")
+    comments.innerHTML = '';
+
+    // Listen to the submit event
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const newComment = event.target["comment-input"].value;
+
+        //Add the comment to the comments section
+        const li = document.createElement('li');
+        li.textContent = newComment;
+        comments.appendChild(li);
+
+        event.target.reset();
     })
 }

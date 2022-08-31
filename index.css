@@ -55,6 +55,7 @@ body {
 }
 
 #search-details {
+    background-color: skyblue;
     display: block;
     justify-content: center;
     align-items: center;
