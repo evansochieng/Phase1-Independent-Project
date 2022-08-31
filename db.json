@@ -1,0 +1,19 @@
+{
+  "UserData": [
+    {
+      "userName": "Evans Ochieng",
+      "userEmail": "evansochieng@gmail.com",
+      "id": 1
+    },
+    {
+      "userName": "Rusty Sabich",
+      "userEmail": "rusty123@gmail.com",
+      "id": 2
+    },
+    {
+      "userName": "Evans",
+      "userEmail": "evans@gmail.com",
+      "id": 3
+    }
+  ]
+}

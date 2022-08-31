@@ -3,6 +3,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Call search university function
     searchUniversity();
+
+    // POST user info to the server
+    postUserInfo();
 })
 
 
@@ -36,14 +39,15 @@ function fetchData(searchInput){
                 countryParagraph.textContent = `Country: ${uniCountry}`
                 searchResults.appendChild(countryParagraph);
     
-                const uniWebsite = university['web_pages'][0];
-                const websiteParagraph = document.createElement('p')
-                //const webLink = document.createElement('a');
-                //webLink.innerText = uniWebsite
-                //websiteParagraph.appendChild(webLink)
-                //websiteParagraph.innerText = `University website: ` + websiteParagraph.innerText
-                websiteParagraph.innerHTML = `University website: ${uniWebsite}`
-                searchResults.appendChild(websiteParagraph);
+                const uniWebsite = university['web_pages'][0];                const webLink = document.createElement('a');
+                webLink.textContent = 'University website'
+                webLink.href = uniWebsite;
+                searchResults.appendChild(webLink);
+                
+                // // Add an event listener to the link
+                // websiteParagraph.addEventListener('click', () => {
+                //     window.location.href = uniWebsite; //make it open 
+                // })
             }
         }
     })
@@ -93,3 +97,40 @@ function postComments(){
         event.target.reset();
     })
 }
+
+// Make a POST request to store user info in the server
+function postUserInfo(){
+    // Grab user info form
+    const form = document.getElementById("user-address");
+
+    // Listen to user submission
+    form.addEventListener('submit', (event) => {
+        event.preventDefault()
+
+        // Capture user info
+        const userName = event.target['user-name'].value;
+        const userEmail = event.target['user-email'].value;
+        console.log(userName, userEmail);
+
+        const userInfo = {
+            userName: userName,
+            userEmail: userEmail
+        };
+
+        // make a POST request to the json-server
+        fetch('http://localhost:3000/UserData', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            },
+            body: JSON.stringify(userInfo) // Convert JS object to JSON
+        })
+        .then( (response) => response.json())
+        .then( (result) => {
+            alert(`${result.userName}, your data has been saved successfully!`)
+        })
+
+        event.target.reset() //Reset form
+    })
+} 
