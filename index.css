@@ -45,9 +45,20 @@ body {
     margin-top: 10px;
     border: 5px;
     padding: 10px;
+    align-items: center;
     text-align: center;
+    display: block;
 }
 
 #search-input {
     width: 40%;
+}
+
+#search-details {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    border: 5px;
+    padding: 10px;
 }
