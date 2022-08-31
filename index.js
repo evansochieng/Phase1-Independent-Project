@@ -21,27 +21,34 @@ function fetchData(searchInput){
         const searchResults = document.getElementById("search-details");
         searchResults.innerHTML = ''; //clear current content
         
-        for (let university of result){
-            // Add the details to DOM
-            const uniName = university.name;
-            const nameParagraph = document.createElement('p')
-            nameParagraph.textContent = `Name: ${uniName}`
-            searchResults.appendChild(nameParagraph);
-
-            const uniCountry = university.country;
-            const countryParagraph = document.createElement('p')
-            countryParagraph.textContent = `Country: ${uniCountry}`
-            searchResults.appendChild(countryParagraph);
-
-            const uniWebsite = university['web_pages'][0];
-            const websiteParagraph = document.createElement('p')
-            //const webLink = document.createElement('a');
-            //webLink.innerText = uniWebsite
-            //websiteParagraph.appendChild(webLink)
-            //websiteParagraph.innerText = `University website: ` + websiteParagraph.innerText
-            websiteParagraph.innerHTML = `University website: ${uniWebsite}`
-            searchResults.appendChild(websiteParagraph);
+        if (result.length === 0){
+            alert('There is no matching university. Please try again!')
+        } else {
+            for (let university of result){
+                // Add the details to DOM
+                const uniName = university.name;
+                const nameParagraph = document.createElement('p')
+                nameParagraph.textContent = `Name: ${uniName}`
+                searchResults.appendChild(nameParagraph);
+    
+                const uniCountry = university.country;
+                const countryParagraph = document.createElement('p')
+                countryParagraph.textContent = `Country: ${uniCountry}`
+                searchResults.appendChild(countryParagraph);
+    
+                const uniWebsite = university['web_pages'][0];
+                const websiteParagraph = document.createElement('p')
+                //const webLink = document.createElement('a');
+                //webLink.innerText = uniWebsite
+                //websiteParagraph.appendChild(webLink)
+                //websiteParagraph.innerText = `University website: ` + websiteParagraph.innerText
+                websiteParagraph.innerHTML = `University website: ${uniWebsite}`
+                searchResults.appendChild(websiteParagraph);
+            }
         }
+    })
+    .catch( (error) => {
+        alert(error.message);
     })
 }
 
