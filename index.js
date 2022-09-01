@@ -48,7 +48,7 @@ function fetchData(searchInput){
                 searchResults.appendChild(webLink);
                 
                 // Add an event listener to the link
-                webLink.addEventListener('mouseover', () => {
+                webLink.addEventListener('mouseleave', () => {
                     alert('Visit the university website for more information!')
                 })
             }
