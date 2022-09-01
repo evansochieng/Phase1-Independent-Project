@@ -98,9 +98,10 @@ body {
 }
 
 button {
-    background-color:#0a0a23;
+    background-color: green;
     color: #fff;
     min-height: 30px;
+    border-radius: 0.25em
 }
 
 input {
@@ -115,4 +116,8 @@ input {
 #user-email {
     width: 20%;
     display:inline-block;
+}
+
+form {
+    border-radius: 0.25em
 }

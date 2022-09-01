@@ -142,8 +142,8 @@ function postUserInfo(){
 function colorButtons(){
     const buttons = document.getElementsByTagName('button');
     for (let button of buttons){
-        button.addEventListener('', () => {
-            button.style.color = 'green';
+        button.addEventListener('click', () => {
+            button.style.background = '#0a0a23'; //change background color on click
         })
     }
 }
