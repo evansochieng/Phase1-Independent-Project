@@ -13,6 +13,18 @@ University Search App is a simple application that enables students get basic in
 
 ---
 
+## MVP
+1. Search box
+2. Comments section
+3. User data submission section
+
+## User stories
+- As a user, I should be able to search for a university and get results if the university exists.
+- As a user, I should be able to comment on the university search results.
+- As a user, I should be able to enter my details (name and email), and submit for further communication.
+
+---
+
 ## Project Guide
 ### 1. Search University
 In the search box, you can either enter the full name of a university, the first name or any word that can assist you get your intended search result. On pressing the search button, the following will be displayed:
