@@ -19,6 +19,16 @@
       "userName": "Evans",
       "userEmail": "evansochieng@gmail.com",
       "id": 4
+    },
+    {
+      "userName": "Bruno",
+      "userEmail": "Bruno@gmail.com",
+      "id": 5
+    },
+    {
+      "userName": "Strath",
+      "userEmail": "strath@gmail.com",
+      "id": 6
     }
   ]
 }
